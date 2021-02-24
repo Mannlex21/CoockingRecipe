@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: NavigatorExample(),
+      // Esta opcion de rutas te da un espacio para poner codigo de la logica de negocio antes de llamar una ruta
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute(builder: (BuildContext context) {
           switch (settings.name) {
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
           }
         });
       },
+      // Esta opcion de rutas te manda directamente a la ruta que llamaste sin customizar nada
       // initialRoute: "/",
       // routes: {
       //   "/": (BuildContext buildContext) => LoginPage(serverController, context),
