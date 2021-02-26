@@ -1,8 +1,9 @@
 import 'package:cooking_recipe_app/src/connection/server_controller.dart';
 import 'package:cooking_recipe_app/src/screens/home_page.dart';
 import 'package:cooking_recipe_app/src/screens/login_page.dart';
+import 'package:cooking_recipe_app/src/screens/register_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modulo1_fake_backend/models.dart';
+import 'package:cooking_recipe_app/src/connection/models.dart';
 
 ServerController serverController = ServerController();
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: Colors.cyan,
         accentColor: Colors.white,
+        appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white)), // Asigna tema de color a los iconos de appBar
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // Esta opcion de rutas te da un espacio para poner codigo de la logica de negocio antes de llamar una ruta
@@ -28,6 +30,13 @@ class MyApp extends StatelessWidget {
             case '/home':
               User userLogged = settings.arguments;
               return HomePage(userLogged);
+            case '/register':
+              User loggedUser = settings.arguments;
+              return RegisterPage(
+                serverController,
+                context,
+                userToEdit: loggedUser,
+              );
             default:
               return LoginPage(serverController, context);
           }

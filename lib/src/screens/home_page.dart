@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modulo1_fake_backend/models.dart';
+import 'package:cooking_recipe_app/src/connection/models.dart';
 
 class HomePage extends StatefulWidget {
   final User loggedUser;
@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home'),
       ),
       body: Center(),
+      drawer: Drawer(),
     );
   }
 }

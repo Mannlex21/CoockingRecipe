@@ -1,6 +1,6 @@
 import 'package:cooking_recipe_app/src/connection/server_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modulo1_fake_backend/models.dart';
+import 'package:cooking_recipe_app/src/connection/models.dart';
 
 class LoginPage extends StatefulWidget {
   ServerController serverController;

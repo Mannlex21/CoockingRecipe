@@ -1,9 +1,9 @@
 library flutter_modulo1_fake_backend;
 
-import 'package:flutter_modulo1_fake_backend/data_init.dart';
-import 'package:flutter_modulo1_fake_backend/models.dart';
-import 'package:flutter_modulo1_fake_backend/recipe.dart';
-import 'package:flutter_modulo1_fake_backend/user.dart';
+import 'data_init.dart';
+import 'models.dart';
+import 'recipe.dart';
+import 'user.dart';
 
 //Lectura de datos
 Future<List<User>> getUsers() async {
