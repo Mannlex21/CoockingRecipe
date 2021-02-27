@@ -33,8 +33,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_modulo1_fake_backend: 
-    path: fakeBackend
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,7 +47,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/image/logo.png
+    - assets/images/logo.png
+    - assets/images/platillos/
+    - assets/images/profile/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

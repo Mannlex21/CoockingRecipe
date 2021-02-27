@@ -1,11 +1,12 @@
 import 'package:cooking_recipe_app/src/connection/server_controller.dart';
 import 'package:cooking_recipe_app/src/screens/home_page.dart';
 import 'package:cooking_recipe_app/src/screens/login_page.dart';
+import 'package:cooking_recipe_app/src/screens/my_favorite_page.dart';
 import 'package:cooking_recipe_app/src/screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cooking_recipe_app/src/connection/models.dart';
 
-ServerController serverController = ServerController();
+ServerController _serverController = ServerController();
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -17,8 +18,17 @@ class MyApp extends StatelessWidget {
         // fontFamily: "Oi",
         brightness: Brightness.light,
         primaryColor: Colors.cyan,
-        accentColor: Colors.white,
-        appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white)), // Asigna tema de color a los iconos de appBar
+        accentColor: Colors.cyan[300],
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white),
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              // es el titulo del appbar
+              color: Colors.white,
+              fontSize: 22,
+            ),
+          ),
+        ), // Asigna tema de color a los iconos de appBar
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // Esta opcion de rutas te da un espacio para poner codigo de la logica de negocio antes de llamar una ruta
@@ -26,19 +36,24 @@ class MyApp extends StatelessWidget {
         return MaterialPageRoute(builder: (BuildContext context) {
           switch (settings.name) {
             case '/':
-              return LoginPage(serverController, context);
+              return LoginPage(_serverController, context);
             case '/home':
-              User userLogged = settings.arguments;
-              return HomePage(userLogged);
+              User loggedUser = settings.arguments;
+              _serverController.loggedUser = loggedUser;
+              return HomePage(_serverController);
+            case '/favorites':
+              User loggedUser = settings.arguments;
+              _serverController.loggedUser = loggedUser;
+              return MyFavoritePage(_serverController);
             case '/register':
               User loggedUser = settings.arguments;
               return RegisterPage(
-                serverController,
+                _serverController,
                 context,
                 userToEdit: loggedUser,
               );
             default:
-              return LoginPage(serverController, context);
+              return LoginPage(_serverController, context);
           }
         });
       },

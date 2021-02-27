@@ -214,8 +214,8 @@ class _RegisterPageState extends State<RegisterPage> {
       User user = User(genrer: this.genrer, nickname: this.userName, password: this.password, photo: this.imageFile);
       var state;
       if (editinguser) {
-        // user.id = widget.serverController.loggedUser.id;
-        // state = await widget.serverController.updateUser(user);
+        user.id = widget.serverController.loggedUser.id;
+        state = await widget.serverController.updateUser(user);
       } else {
         state = await widget.serverController.addUser(user);
       }

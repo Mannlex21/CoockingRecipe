@@ -1,9 +1,12 @@
+import 'package:cooking_recipe_app/src/components/my_drawer.dart';
+import 'package:cooking_recipe_app/src/components/recipe_widget.dart';
+import 'package:cooking_recipe_app/src/connection/server_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:cooking_recipe_app/src/connection/models.dart';
 
 class HomePage extends StatefulWidget {
-  final User loggedUser;
-  HomePage(this.loggedUser, {Key key}) : super(key: key);
+  final ServerController serverController;
+  HomePage(this.serverController, {Key key}) : super(key: key);
 
   _HomePageState createState() => _HomePageState();
 }
@@ -13,10 +16,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Cookbook'),
       ),
-      body: Center(),
-      drawer: Drawer(),
+      body: FutureBuilder<List<Recipe>>(
+        future: widget.serverController.getRecipesList(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.hasData) {
+            final list = snapshot.data;
+            return ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (BuildContext context, int index) {
+                Recipe recipe = list[index];
+
+                return RecipeWidget(
+                  recipe: recipe,
+                  serverController: widget.serverController,
+                  onChange: () {
+                    setState(() {});
+                  },
+                );
+              },
+            );
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
+      drawer: MyDrawer(serverController: widget.serverController),
     );
   }
 }

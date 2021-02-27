@@ -11,14 +11,19 @@ List<Recipe> favorites = [];
 void generateData(BuildContext context) {
   final AssetBundle assetBundle = DefaultAssetBundle.of(context);
   users = [
-    User(id: 1, nickname: "mannlex21", password: "123456", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img1.jpg")),
-    User(id: 2, nickname: "Mauri38", password: "mauri", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img2.jpg")),
-    User(id: 3, nickname: "Steven2019", password: "steven", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img3.jpg")),
-    User(id: 4, nickname: "Leopoldo500", password: "leopoldo", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img4.jpg")),
-    User(id: 5, nickname: "Julia38", password: "julia", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img6.jpg")),
-    User(id: 6, nickname: "KatyPerez", password: "katy", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img7.jpg")),
-    User(id: 7, nickname: "EnrryLirico", password: "enrry", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img8.jpg")),
-    User(id: 8, nickname: "RosaFuentes", password: "rosa", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/usuarios/img9.jpg")),
+    User(id: 1, nickname: "mannlex21", password: "123456", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 2, nickname: "Mauri38", password: "mauri", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 3, nickname: "Steven2019", password: "steven", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(
+        id: 4,
+        nickname: "Leopoldo500",
+        password: "leopoldo",
+        genrer: Genrer.MALE,
+        photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 5, nickname: "Julia38", password: "julia", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 6, nickname: "KatyPerez", password: "katy", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 7, nickname: "EnrryLirico", password: "enrry", genrer: Genrer.MALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
+    User(id: 8, nickname: "RosaFuentes", password: "rosa", genrer: Genrer.FEMALE, photo: AssetFile(assetBundle, "assets/images/profile/profile.png")),
     User(
         id: 9,
         nickname: "MarlonMartinez",
@@ -119,7 +124,7 @@ void generateData(BuildContext context) {
           "Lo que sí es seguro y no se puede negar es que los salvadoreños tienen estilo y sazón a la hora de preparar este delicioso plato, aprecian y reconocen el intercambio de saberes cuando de cocina se trata y le agregan su “toque mágico” a la hora de realizar esta rica receta.",
         ],
         user: users[6],
-        photo: AssetFile(assetBundle, "assets/images/platillos/sopa-de-tortillas.jpg")),
+        photo: AssetFile(assetBundle, "assets/images/platillos/sopa-de-tortilla.jpg")),
     Recipe(
         name: "Pupusas de pollo",
         description:
@@ -144,7 +149,7 @@ void generateData(BuildContext context) {
           "Finalmente, se debe colocar en la plancha o comal y esperar de 5 a 8 a minutos."
         ],
         user: users[3],
-        photo: AssetFile(assetBundle, "assets/images/platillos/pupusas-de-pollo.jpg")),
+        photo: AssetFile(assetBundle, "assets/images/platillos/pupusa-de-pollo.jpeg")),
     Recipe(
         name: "Coctel de camarón",
         description:
@@ -172,7 +177,7 @@ void generateData(BuildContext context) {
           "Cabe destacar que el coctel de camarón además de ser exquisito es un plato considerado afrodisiaco a nivel mundial, disfrutarlo será una grata sensación culinaria."
         ],
         user: users[7],
-        photo: AssetFile(assetBundle, "assets/images/platillos/hacer-coctel-de-camaron.jpg")),
+        photo: AssetFile(assetBundle, "assets/images/platillos/coctel-de-camaron.jpg")),
     Recipe(
         name: "Escabeche salvadoreño",
         description:

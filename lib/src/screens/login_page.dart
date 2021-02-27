@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                 gradient: LinearGradient(colors: [Colors.cyan[300], Colors.cyan[800]]),
               ),
               child: Image.asset(
-                "assets/image/logo.png",
+                "assets/images/logo.png",
                 color: Colors.white,
                 height: 200,
               ),

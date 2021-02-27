@@ -62,13 +62,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_modulo1_fake_backend:
-    dependency: "direct dev"
-    description:
-      path: fakeBackend
-      relative: true
-    source: path
-    version: "0.0.1"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
