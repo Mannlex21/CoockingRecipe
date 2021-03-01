@@ -1,7 +1,10 @@
 import 'package:cooking_recipe_app/src/connection/server_controller.dart';
+import 'package:cooking_recipe_app/src/screens/add_recipe_page.dart';
+import 'package:cooking_recipe_app/src/screens/details_page.dart';
 import 'package:cooking_recipe_app/src/screens/home_page.dart';
 import 'package:cooking_recipe_app/src/screens/login_page.dart';
 import 'package:cooking_recipe_app/src/screens/my_favorite_page.dart';
+import 'package:cooking_recipe_app/src/screens/mys_recipes_page.dart';
 import 'package:cooking_recipe_app/src/screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cooking_recipe_app/src/connection/models.dart';
@@ -51,6 +54,26 @@ class MyApp extends StatelessWidget {
                 _serverController,
                 context,
                 userToEdit: loggedUser,
+              );
+            case "/my_recipes":
+              return MyRecipesPage(
+                _serverController,
+              );
+            case '/details':
+              Recipe recipe = settings.arguments;
+              return DetailsPage(
+                recipe: recipe,
+                serverController: _serverController,
+              );
+            case "/add_recipe":
+              return AddRecipePage(
+                _serverController,
+              );
+            case "/edit_recipe":
+              Recipe recipe = settings.arguments;
+              return AddRecipePage(
+                _serverController,
+                recipe: recipe,
               );
             default:
               return LoginPage(_serverController, context);

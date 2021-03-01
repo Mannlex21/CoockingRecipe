@@ -46,7 +46,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed("/add_recipe");
+        },
       ),
       drawer: MyDrawer(serverController: widget.serverController),
     );
